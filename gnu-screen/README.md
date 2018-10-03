@@ -2,29 +2,29 @@
 
 Se não estiver instalado, instale:
 
-sudo apt install gnu-screen
+`sudo apt install gnu-screen`
 
-Copie o .screenrc disponível aqui no seu /home/usuario/
+Copie o `.screenrc` disponível aqui no seu `/home/usuario/`
 
 1. Iniciar o screen:
 
-screen -S titulo
+`screen -S titulo`
 
 2. Criar nova aba:
 
-Control-a Control-c
+`Control-a Control-c`
 
 3. Ir para a próxima janela
 
-Control-n
+`Control-n`
 
 4. Desconectar (Detach)
 
-Control-a d
+`Control-a d`
 
 5. Reconectar
 
-screen -r titulo
+`screen -r titulo`
 
 
 
