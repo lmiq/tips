@@ -1,5 +1,9 @@
 # Usando o screen
 
+Se não estiver instalado, instale:
+
+sudo apt install gnu-screen
+
 Copie o .screenrc disponível aqui no seu /home/usuario/
 
 1. Iniciar o screen:
