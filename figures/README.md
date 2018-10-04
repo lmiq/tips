@@ -1,4 +1,4 @@
-# Fazendo Figuras com qualidade de publicação
+# Figuras com qualidade de publicação
 
 ## Primeira parte: Gimp
 
