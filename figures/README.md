@@ -1,5 +1,7 @@
 # Fazendo Figuras com qualidade de publicação
 
+## Primeira parte: Gimp
+
 1) Crie suas figuras iniciais nos programas convenientes (VMD, gráficos
 em qualquer programa como matplotlib, xmgrace, origin, ou o que for).
 
@@ -32,10 +34,15 @@ caso exporte como TIFF, usando a compressão LZW).
 (a compressão LZW é uma das opções que aparece quando você tenta
 exportar como TIFF). 
 
-
 5) Se quiser salve a figura no formato do GIMP (.xcf) que permite
 abrir outra vez e continuar editando, desfazendo o que foi feito etc.
 Eu geralmente não uso isto.
+
+7) Se esta figura já é a figura final do artigo, está pronto.
+
+## Segunda parte: Inkscape e a composição de figuras de múltiplas partes
+
+
 
 
 
