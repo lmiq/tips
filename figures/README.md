@@ -5,6 +5,10 @@
 1) Crie suas figuras iniciais nos programas convenientes (VMD, gráficos
 em qualquer programa como matplotlib, xmgrace, origin, ou o que for).
 
+Prefira sempre figuras de fundo branco. Papel é branco, portanto o ideal é
+fazer figuras que fiquem bem quando impressas, sem ter que mudar o fundo todo
+(vale para pôsteres também). Fica mais elegante também. 
+
 2) Abra as figuras no Gimp. A primeira coisa que você tem que fazer é
 eliminar bordas vazias. Para isso, faça: 
 
