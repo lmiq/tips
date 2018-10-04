@@ -9,6 +9,9 @@ Prefira sempre figuras de fundo branco. Papel é branco, portanto o ideal é
 fazer figuras que fiquem bem quando impressas, sem ter que mudar o fundo todo
 (vale para pôsteres também). Fica mais elegante também. 
 
+Evite colocar "bordas" também, em torno das figuras. Quanto mais limpa a figura
+melhor. 
+
 2) Abra as figuras no Gimp. A primeira coisa que você tem que fazer é
 eliminar bordas vazias. Para isso, faça: 
 
