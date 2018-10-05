@@ -26,6 +26,14 @@ Copie o `.screenrc` disponível aqui no seu `/home/usuario/`
 
 `screen -r titulo`
 
+6. Percorrendo o histórico da página:
+
+`Control-A [ESC]`
+
+e use as flechas, page-up, page-down.
+
+
+
 
 
 
