@@ -28,9 +28,10 @@ Copie o `.screenrc` disponível aqui no seu `/home/usuario/`
 
 6. Percorrendo o histórico da página:
 
-`Control-A [ESC]`
+`Control-a [ESC]`
 
-e use as flechas, page-up, page-down.
+e use as flechas, page-up, page-down para se mover no histórico.
+Para voltar ao uso normal do terminal, pressione `[ESC]` outra vez.
 
 
 
