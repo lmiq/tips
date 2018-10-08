@@ -67,6 +67,10 @@ que brincar um pouco com o Inkscape para fazer isso de maneira
 eficiente, mas não é muito complicado. Há ferramentas para alinhar as
 figuras, os textos, etc.  
 
+Para alinhar as figuras, use as ferramentas de alinhamento:
+`http://write.flossmanuals.net/inkscape/align-and-distribute/`
+(use sem economia, até sua figura ficar bonita)
+
 3) Terminada a montagem da figura, agora sim, salve para possíveis
 futuras edições, no formato vetorial (.svg):
 
