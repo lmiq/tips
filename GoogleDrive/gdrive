@@ -1,0 +1,21 @@
+#!/bin/bash
+
+local=/home/leandro/Drive/
+remote=Drive:/
+
+if [ "$1" == "push" ] ; then
+
+  echo "PUSH $local to $remote"
+  rclone sync $local $remote
+
+fi
+
+if [ "$1" == "pull" ] ; then
+  
+  echo "PULL $remote to $local"
+  rclone sync $remote $local
+
+fi
+
+
+
