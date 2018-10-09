@@ -6,14 +6,14 @@ remote=Drive:/
 if [ "$1" == "push" ] ; then
 
   echo "PUSH $local to $remote"
-  rclone sync $local $remote
+  rclone sync --update $local $remote
 
 fi
 
 if [ "$1" == "pull" ] ; then
   
   echo "PULL $remote to $local"
-  rclone sync $remote $local
+  rclone sync --update $remote $local
 
 fi
 
