@@ -11,6 +11,8 @@ Para fazer isso, recomendo usar o sincronizador "rclone".
 
 `sudo apt install rclone`
 
+Todos os detalhes sobre o rclone: https://rclone.org/
+
 2. Configure o rclone com
 
 `rclone config`
