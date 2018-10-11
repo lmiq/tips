@@ -18,7 +18,7 @@ if [ "$1" == "push" ] ; then
   fi
 
   #Does not delete files (safer)
-  rclone copy --update $local $remote
+  rclone copy -v --update $local $remote
 
 fi
 
@@ -32,7 +32,7 @@ if [ "$1" == "pull" ] ; then
   fi
 
   #Does not delete files (safer)
-  rclone copy --update $remote $local
+  rclone copy -v --update $remote $local
 
 fi
 
