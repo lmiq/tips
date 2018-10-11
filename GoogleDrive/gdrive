@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# use with:  gdrive push/pull         to copy files
+#            gdrive push/pull sync    to synchronize (be careful)
+#
+#
 
 local=/home/leandro/Drive/
 remote=Drive:/
@@ -6,14 +11,28 @@ remote=Drive:/
 if [ "$1" == "push" ] ; then
 
   echo "PUSH $local to $remote"
-  rclone sync -v --update $local $remote
+
+  if [ "$2" == "sync" ] ; then
+    #Delete files not present in destination (really synchronizes)
+    rclone sync -v --update $local $remote
+  fi
+
+  #Does not delete files (safer)
+  rclone copy --update $local $remote
 
 fi
 
 if [ "$1" == "pull" ] ; then
   
   echo "PULL $remote to $local"
-  rclone sync -v --update $remote $local
+
+  if [ "$2" == "sync" ] ; then
+    #Delete files not present in destination (really synchronizes)
+    rclone sync -v --update $remote $local
+  fi
+
+  #Does not delete files (safer)
+  rclone copy --update $remote $local
 
 fi
 
