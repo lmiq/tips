@@ -25,7 +25,9 @@ esteja no seu PATH.
 
 4. Edite o arquivo prestanto atenção no nome do
 diretório remoto, que deve ser o mesmo que você deu na configuração do
-rclone. Preste bem atenção no diretório local que você pretende
+rclone. 
+
+Preste bem atenção no diretório local que você pretende
 sincronizar (CUIDADO!!! Se sincronizar um diretório local cheio de coisas
 com um vazio remoto, ou vice-versa, na direção errada, pode apagar tudo
 que tem em um deles!!!). 
@@ -37,5 +39,16 @@ para enviar as modificações do diretório local ao diretório remoto.
 
 `gdrive pull`  
 para trazer as modificações do diretório remoto para o diretório local.
+
+Estas opções não vão deletar os arquivos que não estão presentes no diretório
+de destino, o que é mais seguro. Se você quer realmente sincronizar os diretórios,
+deletando arquivos, use
+
+`gdrive push sync`  
+`gdrive pull sync`  
+
+
+
+
 
 
