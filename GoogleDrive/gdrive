@@ -15,24 +15,33 @@ if [ "$1" == "push" ] ; then
   if [ "$2" == "sync" ] ; then
     #Delete files not present in destination (really synchronizes)
     rclone sync -v --update $local $remote
+  elif [ "$2" > " " ] ; then
+    echo "ERROR: second argument, if any, must be 'sync'"
+    exit
   fi
 
   #Does not delete files (safer)
   rclone copy -v --update $local $remote
 
-fi
-
-if [ "$1" == "pull" ] ; then
+elif [ "$1" == "pull" ] ; then
   
   echo "PULL $remote to $local"
 
   if [ "$2" == "sync" ] ; then
     #Delete files not present in destination (really synchronizes)
     rclone sync -v --update $remote $local
+  elif [ "$2" > " " ] ; then
+    echo "ERROR: second argument, if any, must be 'sync'"
+    exit
   fi
 
   #Does not delete files (safer)
   rclone copy -v --update $remote $local
+
+else
+
+  echo "ERROR: First argument must be 'push' or 'pull'"
+  exit
 
 fi
 
