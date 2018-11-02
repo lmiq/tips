@@ -8,14 +8,14 @@
 local=/home/leandro/Drive/
 remote=Drive:/
 
-if [ "$1" == "push" ] ; then
+if [[ "$1" == "push" ]] ; then
 
   echo "PUSH $local to $remote"
 
-  if [ "$2" == "sync" ] ; then
+  if [[ "$2" == "sync" ]] ; then
     #Delete files not present in destination (really synchronizes)
     rclone sync -v --update $local $remote
-  elif [ "$2" > " " ] ; then
+  elif [[ "$2" > " " ]] ; then
     echo "ERROR: second argument, if any, must be 'sync'"
     exit
   fi
@@ -23,14 +23,14 @@ if [ "$1" == "push" ] ; then
   #Does not delete files (safer)
   rclone copy -v --update $local $remote
 
-elif [ "$1" == "pull" ] ; then
+elif [[ "$1" == "pull" ]] ; then
   
   echo "PULL $remote to $local"
 
-  if [ "$2" == "sync" ] ; then
+  if [[ "$2" == "sync" ]] ; then
     #Delete files not present in destination (really synchronizes)
     rclone sync -v --update $remote $local
-  elif [ "$2" > " " ] ; then
+  elif [[ "$2" > " " ]] ; then
     echo "ERROR: second argument, if any, must be 'sync'"
     exit
   fi
