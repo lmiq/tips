@@ -8,35 +8,62 @@
 local=/home/leandro/Drive/
 remote=Drive:/
 
+#
+# The script will sync either the current folder or all drive.
+# If the current folder is a subfolder of the drive, the current
+# folder will be sync. Otherwise, the complete drive will be sync.
+#
+
+current_dir=`pwd`
+echo "Current dir: $current_dir"
+
+if [[ "$current_dir" == "$local"* ]] ; then
+
+  echo "Current dir is a drive subfolder"
+
+  len_local=${#local}
+  len_current=${#current_dir}
+  target=$remote${current_dir:$len_local:$len_current}
+  current_local=$current_dir
+  current_remote=$target
+
+  echo "Will sync $current_dir to $target"
+else
+  current_local=$local
+  current_remote=$remote
+
+  echo "Will sync $local to $remote"
+fi
+
 if [[ "$1" == "push" ]] ; then
 
-  echo "PUSH $local to $remote"
+  echo "PUSH $current_local to $current_remote"
 
   if [[ "$2" == "sync" ]] ; then
     #Delete files not present in destination (really synchronizes)
-    rclone sync -v --update $local $remote
+    rclone sync -v --update $current_local $current_remote
   elif [[ "$2" > " " ]] ; then
     echo "ERROR: second argument, if any, must be 'sync'"
     exit
   fi
 
   #Does not delete files (safer)
-  rclone copy -v --update $local $remote
+  rclone copy -v --update $current_local $current_remote
 
 elif [[ "$1" == "pull" ]] ; then
   
-  echo "PULL $remote to $local"
+  echo "PULL $current_remote to $current_local"
 
   if [[ "$2" == "sync" ]] ; then
     #Delete files not present in destination (really synchronizes)
-    rclone sync -v --update $remote $local
+    rclone sync -v --update $current_remote $current_local
   elif [[ "$2" > " " ]] ; then
     echo "ERROR: second argument, if any, must be 'sync'"
     exit
   fi
 
   #Does not delete files (safer)
-  rclone copy -v --update $remote $local
+  rclone copy -v --update $current_remote $current_local
 
 else
 
