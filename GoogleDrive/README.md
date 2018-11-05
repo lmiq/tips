@@ -47,6 +47,31 @@ deletando arquivos, use
 `gdrive push sync`  
 `gdrive pull sync`  
 
+IMPORTANTE: 
+
+Se os comandos acima forem dados de dentro de um sub-diretório do Drive,
+apenas o subdiretório será atualizado. Por exemplo, se seu seu Drive está sincronizado
+em
+
+`/home/usuario/Drive`
+
+e você está trabalhando em
+
+`/home/usuario/Drive/palestras/`
+
+e executar o comando `gdrive push`, apenas o diretorio `palestras` e o que tem dentro
+dele será sincronizado.
+
+Isto acelera muito a sincronização. Para sincronizar todo o Drive, execute os comandos
+da raiz do Drive (`/home/usuario/Drive`) ou de qualquer outro lugar fora do Drive.
+
+
+
+
+
+
+
+
 
 
 
