@@ -3,6 +3,7 @@
 # use with:  gdrive push/pull         to copy files
 #            gdrive push/pull sync    to synchronize (be careful)
 #
+#            gdrive check             to check differences
 #
 
 local=/home/leandro/Drive/
@@ -64,6 +65,11 @@ elif [[ "$1" == "pull" ]] ; then
 
   #Does not delete files (safer)
   rclone copy -v --update $current_remote $current_local
+
+elif [[ "$1" == "check" ]] ; then
+  
+  #Check differences
+  rclone check -v --update $current_remote $current_local
 
 else
 

@@ -47,6 +47,11 @@ deletando arquivos, use
 `gdrive push sync`  
 `gdrive pull sync`  
 
+6. Para verificar as diferenças, sem fazer nada, use:
+
+`gdrive check`
+
+
 IMPORTANTE: 
 
 Se os comandos acima forem dados de dentro de um sub-diretório do Drive,
