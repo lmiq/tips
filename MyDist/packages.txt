@@ -1,0 +1,17 @@
+vim-gnome
+pymol
+rclone
+inkscape
+gnu-screen
+texlive-full
+gfortran
+msttcorefonts
+python3-matplotlib python3-numpy python3-scipy
+python-matplotlib python3-numpy python3-scipy
+open-ssh
+git
+chromium-browser
+language-pack-pt
+language-pack-es
+language-pack-fr
+apache2
