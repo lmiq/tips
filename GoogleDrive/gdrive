@@ -15,6 +15,15 @@ remote=Drive:/
 # folder will be sync. Otherwise, the complete drive will be sync.
 #
 
+exclude_file=$local/.exclude_from_sync
+if [ -f $exclude_file ] ; then
+  echo "Excluding files on $exclude_file from sync "
+  exclude=True
+else
+  exclude=False
+fi
+ 
+
 current_dir=`pwd`"/"
 echo "Current dir: $current_dir"
 
@@ -42,14 +51,22 @@ if [[ "$1" == "push" ]] ; then
 
   if [[ "$2" == "sync" ]] ; then
     #Delete files not present in destination (really synchronizes)
-    rclone sync -v --update $current_local $current_remote
+    if [ ! exclude ] ; then
+      rclone sync -v --update $current_local $current_remote
+    else
+      rclone sync -v --exclude-from $exclude_file --update $current_local $current_remote
+    fi
   elif [[ "$2" > " " ]] ; then
     echo "ERROR: second argument, if any, must be 'sync'"
     exit
   fi
 
   #Does not delete files (safer)
-  rclone copy -v --update $current_local $current_remote
+  if [ ! exclude ] ; then
+    rclone copy -v --update $current_local $current_remote
+  else
+    rclone copy -v --exclude-from $exclude_file --update $current_local $current_remote
+  fi
 
 elif [[ "$1" == "pull" ]] ; then
   
@@ -57,14 +74,22 @@ elif [[ "$1" == "pull" ]] ; then
 
   if [[ "$2" == "sync" ]] ; then
     #Delete files not present in destination (really synchronizes)
-    rclone sync -v --update $current_remote $current_local
+    if [ ! exclude ] ; then
+      rclone sync -v --update $current_remote $current_local
+    else
+      rclone sync -v --exclude-from $exclude_file --update $current_remote $current_local
+    fi
   elif [[ "$2" > " " ]] ; then
     echo "ERROR: second argument, if any, must be 'sync'"
     exit
   fi
 
   #Does not delete files (safer)
-  rclone copy -v --update $current_remote $current_local
+  if [ ! exclude ] ; then
+    rclone copy -v --update $current_remote $current_local
+  else
+    rclone copy -v --exclude-from $exclude_file --update $current_remote $current_local
+  fi
 
 elif [[ "$1" == "check" ]] ; then
   
