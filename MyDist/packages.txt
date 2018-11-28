@@ -16,6 +16,7 @@ language-pack-es
 language-pack-fr
 apache2
 trash-cli
+tclsh
 
 java8:
 #sudo apt-get purge openjdk*
