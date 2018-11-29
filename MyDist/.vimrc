@@ -24,7 +24,8 @@ com Code set textwidth=1000 | set nospell
 
 "Use gui with desired dimensions
 if has('gui_running')
-  set lines=49 columns=90
+  set lines=56 columns=135
+  syntax on
 endif
 
 " From vimrc_example.vim distributed with Vim 7. When editing a file,
