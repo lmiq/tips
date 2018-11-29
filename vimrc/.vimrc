@@ -1,4 +1,5 @@
-set guifont=Courier\ 10\ Pitch\ 10
+"set guifont=Courier\ 10\ Pitch\ 10
+set guifont=Ubuntu\ Mono\ Regular\ 12
 set ve=all
 set bs=eol,start,indent
 set redraw
@@ -23,7 +24,8 @@ com Code set textwidth=1000 | set nospell
 
 "Use gui with desired dimensions
 if has('gui_running')
-  set lines=49 columns=90
+  set lines=56 columns=135
+  syntax on
 endif
 
 " From vimrc_example.vim distributed with Vim 7. When editing a file,
