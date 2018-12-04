@@ -1,0 +1,33 @@
+No Windows:
+
+1. Baixar o MinGW de:  https://osdn.net/projects/mingw/releases/
+
+2. Instalar o MinGW, em seguida instalar os pacotes:
+
+mingw-developer-toolkit-bin (instala várias outras coisas junto)
+mingw32-gcc-gfortran-bin   (não sei se já vai estar marcado pela instalação acima)
+
+3. Colocar no path do Windows os seguintes diretórios:
+
+C:\MinGW\bin
+C:\MinGW\msys\1.0\bin
+
+4. Instalar o Git para windows de:
+
+https://git-scm.com/download/win
+
+Abrir um command prompt e:
+
+5. Baixar o ultimo topolink com:
+
+git clone https://github.com/mcubeg/topolink
+
+6. Compilar:
+
+cd topolink/src
+make static
+
+O executável topolink.exe deve ter sido gerado no diretorio topolink/bin, e deve funcionar em qualquer 
+computador com Windows.
+
+
