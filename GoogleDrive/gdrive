@@ -2,8 +2,7 @@
 #
 # use with:  gdrive push/pull         to copy files
 #            gdrive push/pull sync    to synchronize (be careful)
-#
-#            gdrive check             to check differences
+#            gdrive push/pull check   to check differences
 #
 
 local=/home/leandro/Drive/
@@ -22,7 +21,19 @@ if [ -f $exclude_file ] ; then
 else
   exclude=False
 fi
- 
+
+#
+# Default flags
+#
+
+flags="-v --update" 
+if [ exclude ] ; then
+  flags="$flags --exclude-from $exclude_file"
+fi
+
+#
+# Check if directory is a Drive subfolder
+#
 
 current_dir=`pwd`"/"
 echo "Current dir: $current_dir"
@@ -37,80 +48,44 @@ if [[ "$current_dir" == "$local"* ]] ; then
   current_local=$current_dir
   current_remote=$target
 
-  echo "Will sync $current_dir to $target"
 else
+
   current_local=$local
   current_remote=$remote
 
-  echo "Will sync $local to $remote"
 fi
+
+# Push or pull
 
 if [[ "$1" == "push" ]] ; then
-
-  echo "PUSH $current_local to $current_remote"
-
-  if [[ "$2" == "sync" ]] ; then
-    #Delete files not present in destination (really synchronizes)
-    if [ ! exclude ] ; then
-      echo "Running: rclone sync -v --update $current_local $current_remote"
-      rclone sync -v --update $current_local $current_remote
-    else
-      echo "Running: rclone sync -v --exclude-from $exclude_file --update $current_local $current_remote"
-      rclone sync -v --exclude-from $exclude_file --update $current_local $current_remote
-    fi
-  elif [[ "$2" > " " ]] ; then
-    echo "ERROR: second argument, if any, must be 'sync'"
-    exit
-  else
-    #Does not delete files (safer)
-    if [ ! exclude ] ; then
-      echo "Running: rclone copy -v --update $current_local $current_remote"
-      rclone copy -v --update $current_local $current_remote
-    else
-      echo "Running: rclone copy -v --exclude-from $exclude_file --update $current_local $current_remote"
-      rclone copy -v --exclude-from $exclude_file --update $current_local $current_remote
-    fi
-  fi
-
+  type="copy"
+  source="$current_local"
+  destination="$current_remote"
 elif [[ "$1" == "pull" ]] ; then
-  
-  echo "PULL $current_remote to $current_local"
-
-  if [[ "$2" == "sync" ]] ; then
-    #Delete files not present in destination (really synchronizes)
-    if [ ! exclude ] ; then
-      echo "Running: rclone sync -v --update $current_remote $current_local"
-      rclone sync -v --update $current_remote $current_local
-    else
-      echo "Running: rclone sync -v --exclude-from $exclude_file --update $current_remote $current_local"
-      rclone sync -v --exclude-from $exclude_file --update $current_remote $current_local
-    fi
-  elif [[ "$2" > " " ]] ; then
-    echo "ERROR: second argument, if any, must be 'sync'"
-    exit
-  else
-    #Does not delete files (safer)
-    if [ ! exclude ] ; then
-      echo "Running: rclone copy -v --update $current_remote $current_local"
-      rclone copy -v --update $current_remote $current_local
-    else
-      echo "Running: rclone copy -v --exclude-from $exclude_file --update $current_remote $current_local"
-      rclone copy -v --exclude-from $exclude_file --update $current_remote $current_local
-    fi
-  fi
-
-elif [[ "$1" == "check" ]] ; then
-  
-  #Check differences
-  echo "Running: rclone check -v --update $current_remote $current_local"
-  rclone check -v --update $current_remote $current_local
-
+  type="copy"
+  source="$current_remote"
+  destination="$current_local"
 else
-
-  echo "ERROR: First argument must be 'push' or 'pull'"
-  exit
-
+  echo "ERROR: First argument must be 'push', 'pull'"
 fi
+
+# Sync, check
+
+if [[ "$2" == "sync" ]] ; then
+  type="sync"
+elif [[ "$2" == "check" ]] ; then
+  type="check"
+elif [[ "$2" > " " ]] ; then
+  echo "ERROR: Second argument, if any, must be 'sync', 'check'"
+fi
+
+echo "RUN: $type $source to $destination"
+run="rclone $type $flags $source $destination"
+echo "Command: $run"
+$run
+
+
+
 
 
 
