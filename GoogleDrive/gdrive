@@ -52,20 +52,24 @@ if [[ "$1" == "push" ]] ; then
   if [[ "$2" == "sync" ]] ; then
     #Delete files not present in destination (really synchronizes)
     if [ ! exclude ] ; then
+      echo "Running: rclone sync -v --update $current_local $current_remote"
       rclone sync -v --update $current_local $current_remote
     else
+      echo "Running: rclone sync -v --exclude-from $exclude_file --update $current_local $current_remote"
       rclone sync -v --exclude-from $exclude_file --update $current_local $current_remote
     fi
   elif [[ "$2" > " " ]] ; then
     echo "ERROR: second argument, if any, must be 'sync'"
     exit
-  fi
-
-  #Does not delete files (safer)
-  if [ ! exclude ] ; then
-    rclone copy -v --update $current_local $current_remote
   else
-    rclone copy -v --exclude-from $exclude_file --update $current_local $current_remote
+    #Does not delete files (safer)
+    if [ ! exclude ] ; then
+      echo "Running: rclone copy -v --update $current_local $current_remote"
+      rclone copy -v --update $current_local $current_remote
+    else
+      echo "Running: rclone copy -v --exclude-from $exclude_file --update $current_local $current_remote"
+      rclone copy -v --exclude-from $exclude_file --update $current_local $current_remote
+    fi
   fi
 
 elif [[ "$1" == "pull" ]] ; then
@@ -75,25 +79,30 @@ elif [[ "$1" == "pull" ]] ; then
   if [[ "$2" == "sync" ]] ; then
     #Delete files not present in destination (really synchronizes)
     if [ ! exclude ] ; then
+      echo "Running: rclone sync -v --update $current_remote $current_local"
       rclone sync -v --update $current_remote $current_local
     else
+      echo "Running: rclone sync -v --exclude-from $exclude_file --update $current_remote $current_local"
       rclone sync -v --exclude-from $exclude_file --update $current_remote $current_local
     fi
   elif [[ "$2" > " " ]] ; then
     echo "ERROR: second argument, if any, must be 'sync'"
     exit
-  fi
-
-  #Does not delete files (safer)
-  if [ ! exclude ] ; then
-    rclone copy -v --update $current_remote $current_local
   else
-    rclone copy -v --exclude-from $exclude_file --update $current_remote $current_local
+    #Does not delete files (safer)
+    if [ ! exclude ] ; then
+      echo "Running: rclone copy -v --update $current_remote $current_local"
+      rclone copy -v --update $current_remote $current_local
+    else
+      echo "Running: rclone copy -v --exclude-from $exclude_file --update $current_remote $current_local"
+      rclone copy -v --exclude-from $exclude_file --update $current_remote $current_local
+    fi
   fi
 
 elif [[ "$1" == "check" ]] ; then
   
   #Check differences
+  echo "Running: rclone check -v --update $current_remote $current_local"
   rclone check -v --update $current_remote $current_local
 
 else
