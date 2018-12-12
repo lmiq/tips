@@ -14,6 +14,7 @@ mkdir -p .local/share/nemo/actions
 \cp -f ./nemo/gdrivePUSH.nemo_action $nemo_dir
 \cp -f ./nemo/gdrivePULL.nemo_action $nemo_dir
 sed -e "s|INSTALL_DIR|$install_dir|" "./nemo/gdrive.sh" > $nemo_dir/gdrive.sh
+chmod +x $nemo_dir/gdrive.sh
 
 nemo --quit
 
