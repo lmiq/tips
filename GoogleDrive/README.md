@@ -70,6 +70,16 @@ dele será sincronizado.
 Isto acelera muito a sincronização. Para sincronizar todo o Drive, execute os comandos
 da raiz do Drive (`/home/usuario/Drive`) ou de qualquer outro lugar fora do Drive.
 
+# Usando o script no nemo (gerenciador de arquivos do Mint)
+
+O script 
+
+`nemo.sh`
+
+instala um par de arquivos que permitem usar a sincronização direto do gerenciador de arquivos
+gráfico, usando um click com o botão direito do mouse, como mostra a figura:
+
+![alt text](http://url/to/img.png)
 
 
 
