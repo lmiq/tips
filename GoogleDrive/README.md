@@ -79,7 +79,7 @@ O script
 instala um par de arquivos que permitem usar a sincronização direto do gerenciador de arquivos
 gráfico, usando um click com o botão direito do mouse, como mostra a figura:
 
-![alt text](http://url/to/img.png)
+![alt text](https://raw.githubusercontent.com/leandromartinez98/tips/master/GoogleDrive/nemo/nemo.png)
 
 
 
