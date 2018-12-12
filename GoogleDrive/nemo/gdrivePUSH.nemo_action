@@ -1,0 +1,9 @@
+[Nemo Action]
+Active=true
+Name=gdrive PUSH
+Comment=Push current folder to Google Drive
+Exec=<gdrive.sh push %P>
+Icon-Name=gtk-execute
+Selection=none
+Mimetypes=application/x-iso9660-image;
+Terminal=true
