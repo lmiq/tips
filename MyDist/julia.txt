@@ -3,6 +3,7 @@
 Revise
 FortranFiles
 Plots
+Colors
 
 
 .julia/config/startup.jl:
