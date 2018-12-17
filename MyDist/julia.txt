@@ -5,6 +5,7 @@ FortranFiles
 Plots
 Colors
 LaTeXStrings
+PyPlot
 
 
 .julia/config/startup.jl:
