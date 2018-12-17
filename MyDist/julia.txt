@@ -4,6 +4,7 @@ Revise
 FortranFiles
 Plots
 Colors
+LaTeXStrings
 
 
 .julia/config/startup.jl:
