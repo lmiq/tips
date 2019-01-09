@@ -18,6 +18,7 @@ apache2
 trash-cli
 tclsh
 xournal
+grace
 
 java8:
 #sudo apt-get purge openjdk*
