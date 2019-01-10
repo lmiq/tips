@@ -19,6 +19,7 @@ trash-cli
 tclsh
 xournal
 grace
+qt5-default
 
 java8:
 #sudo apt-get purge openjdk*
