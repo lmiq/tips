@@ -10,6 +10,7 @@ PyPlot
 ProgressMeter
 LinearAlgebra
 GR
+LsqFit
 
 .julia/config/startup.jl:
 
