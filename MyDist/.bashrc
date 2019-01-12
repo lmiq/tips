@@ -14,7 +14,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias ls='ls -hF --color=never'
-alias update='echo "Update system..."; sudo apt-get update; sudo apt-get dist-upgrade'
+alias update='echo "Update system..."; sudo apt update; sudo apt upgrade -y; sudo apt autoremove -y'
 
 alias evince=xreader
 alias eog=xviewer
