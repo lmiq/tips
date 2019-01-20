@@ -3,7 +3,11 @@ caption always
 # Green:
 #caption string "%{= gW}%-w %{= rW}%n %t %{= gW}%+w"
 # Blue:
-caption string "%{= BW}%-w %{= rW}%n %t %{= BW}%+w %{= BW}%-15=[%S]"
+#caption string "%{= BW}%-w %{= rW}%n %t %{= BW}%+w %{= BW}%-15=[%S]"
+# Red:
+caption string "%{= rW}%-w %{= bW}%n %t %{= rW}%+w %{= rW}%-15=[%S]"
+# Yellow
+caption string "%{= yk}%-w %{= bW}%n %t %{= yk}%+w %{= yk}%-15=[%S]"
 maptimeout 5
 term xterm
 vbell off
