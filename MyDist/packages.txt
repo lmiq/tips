@@ -20,6 +20,7 @@ tclsh
 xournal
 grace
 qt5-default
+liblapack-dev
 
 java8:
 #sudo apt-get purge openjdk*
