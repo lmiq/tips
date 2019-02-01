@@ -79,10 +79,10 @@ elif [[ "$2" > " " ]] ; then
   echo "ERROR: Second argument, if any, must be 'sync', 'check'"
 fi
 
-echo "RUN: $type $source to $destination"
-run="rclone $type $flags $source $destination"
+echo "RUN: $type \"$source\" to \"$destination\""
+run="rclone $type $flags \"$source\" \"$destination\""
 echo "Command: $run"
-$run
+eval $run
 
 
 
