@@ -2,7 +2,7 @@
 Active=true
 Name=gdrive PULL
 Comment=Pulls current folder from Google Drive
-Exec=<gdrive.sh pull %P>
+Exec=<gdrive.sh pull "%P">
 Icon-Name=gtk-execute
 Selection=none
 Mimetypes=application/x-iso9660-image;
