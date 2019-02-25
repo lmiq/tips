@@ -14,22 +14,11 @@ remote=Drive:/
 # folder will be sync. Otherwise, the complete drive will be sync.
 #
 
-exclude_file=$local/.exclude_from_sync
-if [ -f $exclude_file ] ; then
-  echo "Excluding files on $exclude_file from sync "
-  exclude=True
-else
-  exclude=False
-fi
-
 #
 # Default flags
 #
 
 flags="-v --update" 
-if [ exclude ] ; then
-  flags="$flags --exclude-from $exclude_file"
-fi
 
 #
 # Check if directory is a Drive subfolder
@@ -53,6 +42,16 @@ else
   current_local=$local
   current_remote=$remote
 
+fi
+
+#
+# Ignore files listed in .gdriveignore file
+#
+
+gdrive_ignore=`pwd`/.gdriveignore
+if [ -f $gdrive_ignore ] ; then
+  echo "Excluding files on $gdrive_ignore from sync "
+  flags="$flags --exclude-from $gdrive_ignore"
 fi
 
 # Push or pull
