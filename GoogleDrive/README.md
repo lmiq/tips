@@ -51,6 +51,19 @@ deletando arquivos, use
 
 `gdrive check`
 
+6. Ignorando arquivos
+
+Para ignorar arquivos dentro de um diretório, crie um arquivo chamado `.gdriveignore`,
+que contenha as especificações. Por exemplo:
+```
+#.gdriveignore
+*.log
+folder/**
+```
+A sincronização ignorará os arquivos dentro de `folder` e os arquivos `log`. A regra colocada
+em um diretório vale para esse diretório e todos os subdiretórios dele. Ou seja, neste caso,
+os arquivos `log` de todos os subdiretórios também serão ignorados.
+
 
 IMPORTANTE: 
 
