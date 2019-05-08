@@ -27,6 +27,13 @@ flags="-v --update"
 current_dir=`pwd`"/"
 echo "Current dir: $current_dir"
 
+#
+# File containing base files to ignore
+#
+
+ignore_base=`dirname $0`"/GdriveIgnoreBase.txt"
+echo "Ignoring files listed in: $ignore_base"
+
 if [[ "$current_dir" == "$local"* ]] ; then
 
   echo "Current dir is a drive subfolder"
@@ -50,7 +57,10 @@ fi
 
 ignore_files=`find $current_dir -name .gdriveignore`
 igTMP=`pwd`/.gdriveignoreTMP
-echo ".gdriveignoreTMP" > $igTMP
+echo "# $ignore_base" > $igTMP
+cat $ignore_base >> $igTMP
+echo "# This file:" >> $igTMP
+echo ".gdriveignoreTMP" >> $igTMP
 for file in $ignore_files ; do
   echo "# $file" >> $igTMP
   dir=${file#"$current_dir"}
