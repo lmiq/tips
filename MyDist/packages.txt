@@ -21,6 +21,7 @@ xournal
 grace
 qt5-default
 liblapack-dev
+g3data
 
 java8:
 #sudo apt-get purge openjdk*
