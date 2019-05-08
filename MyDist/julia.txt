@@ -11,6 +11,9 @@ ProgressMeter
 LinearAlgebra
 GR
 LsqFit
+CSV
+DataFrames
+
 
 .julia/config/startup.jl:
 
