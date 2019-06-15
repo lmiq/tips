@@ -48,6 +48,9 @@ else
 
   current_local=$local
   current_remote=$remote
+ 
+  echo "Current dir is NOT a $remote subfolder. Quitting."
+  exit
 
 fi
 
