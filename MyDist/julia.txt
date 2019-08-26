@@ -14,13 +14,6 @@ LsqFit
 CSV
 DataFrames
 
-
-.julia/config/startup.jl:
-
-println(" Loading .julia/config/startup.jl ")
-using Revise ; println(" Loading Revise... ")
-
-
 Sintax on vim:
 
 git clone git://github.com/JuliaEditorSupport/julia-vim.git
