@@ -58,28 +58,33 @@ fi
 # Ignore files listed in .gdriveignore files of all subfolders
 #
 
-ignore_files=`find $current_dir -name .gdriveignore`
+ignore_files=`find "$current_dir" -name .gdriveignore`
 igTMP=`pwd`/.gdriveignoreTMP
-echo "# $ignore_base" > $igTMP
-cat $ignore_base >> $igTMP
-echo "# This file:" >> $igTMP
-echo ".gdriveignoreTMP" >> $igTMP
-for file in $ignore_files ; do
-  echo "# $file" >> $igTMP
-  dir=${file#"$current_dir"}
-  dir=${dir%".gdriveignore"}
-  list=`cat $file`
-  for str in "$list" ; do
-    n=`echo -n "$str" | wc -m`
-    if [[ $n -ne 0 ]]; then 
-      echo "$dir$str" >> $igTMP
-    fi
-  done
-done
+echo "# $ignore_base" > "$igTMP"
+cat $ignore_base >> "$igTMP"
+echo "# This file:" >> "$igTMP"
+echo ".gdriveignoreTMP" >> "$igTMP"
+if [[ $ignore_files ]]; then
+    echo "Found .gitignore files."
+    for file in "$ignore_files" ; do
+      echo "# $file" >> "$igTMP"
+      dir=${file#"$current_dir"}
+      dir=${dir%".gdriveignore"}
+      list=`cat $file`
+      for str in "$list" ; do
+        n=`echo -n "$str" | wc -m`
+        if [[ $n -ne 0 ]]; then 
+          echo "$dir$str" >> "$igTMP"
+        fi
+      done
+    done
+else
+    echo "No .gitignore files found"
+fi
 
-gdrive_ignore=$igTMP
+gdrive_ignore="$igTMP"
 echo "Excluding files on $gdrive_ignore from sync "
-flags="$flags --exclude-from $gdrive_ignore"
+flags="$flags --exclude-from \"$gdrive_ignore\" "
 
 # Push or pull
 
@@ -109,9 +114,3 @@ echo "RUN: $type \"$source\" to \"$destination\""
 run="rclone $type $flags \"$source\" \"$destination\""
 echo "Command: $run"
 eval $run
-
-
-
-
-
-
