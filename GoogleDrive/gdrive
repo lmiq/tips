@@ -98,6 +98,7 @@ elif [[ "$1" == "pull" ]] ; then
   destination="$current_local"
 else
   echo "ERROR: First argument must be 'push', 'pull'"
+  exit
 fi
 
 # Sync, check
@@ -108,6 +109,7 @@ elif [[ "$2" == "check" ]] ; then
   type="check"
 elif [[ "$2" > " " ]] ; then
   echo "ERROR: Second argument, if any, must be 'sync', 'check'"
+  exit
 fi
 
 echo "RUN: $type \"$source\" to \"$destination\""
