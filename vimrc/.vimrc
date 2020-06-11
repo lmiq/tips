@@ -1,3 +1,25 @@
+"for vundle
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'sainnhe/vim-color-forest-night'
+Plugin 'joshdick/onedark.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+
+
 set guifont=Ubuntu\ Mono\ Regular\ 10
 set ve=all
 set bs=eol,start,indent
@@ -52,5 +74,10 @@ if has("gui_running")
 else
     colorscheme default
 endif
+
+syntax on
+
+
+
 
 
