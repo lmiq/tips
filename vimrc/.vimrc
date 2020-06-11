@@ -11,14 +11,11 @@ Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'sainnhe/vim-color-forest-night'
 Plugin 'joshdick/onedark.vim'
-
+Plugin 'lifepillar/vim-solarized8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
-
-
-
+filetype plugin indent off    " required 'on' for vundle?
 
 set guifont=Ubuntu\ Mono\ Regular\ 10
 set ve=all
