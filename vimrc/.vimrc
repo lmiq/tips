@@ -1,5 +1,4 @@
-"for vundle
-
+" for vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -12,6 +11,7 @@ Plugin 'tomasiser/vim-code-dark'
 Plugin 'sainnhe/vim-color-forest-night'
 Plugin 'joshdick/onedark.vim'
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,11 +55,13 @@ map tp :tabprev<CR>
 hi Spellbad ctermbg=red
 hi Visual ctermbg=231 ctermfg=240
 
+let g:gruvbox_italic=1
+
 if has("gui_running")
-    colorscheme morning
+    colorscheme forest-night
     let hostname = hostname()
     if hostname == "pitico"
-      colorscheme tango-morning
+      colorscheme forest-night
       set guifont=Ubuntu\ Mono\ Regular\ 12
       set lines=56 columns=135
       syntax on
@@ -73,6 +75,11 @@ else
 endif
 
 syntax on
+
+hi clear SpellBad
+hi SpellBad cterm=underline,bold
+hi SpellBad ctermfg=red  
+
 
 
 
