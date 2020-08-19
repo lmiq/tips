@@ -79,6 +79,8 @@ syntax on
 hi clear SpellBad
 hi SpellBad cterm=underline,bold
 hi SpellBad ctermfg=red  
+hi SpellBad gui=undercurl
+hi SpellBad guifg=red
 
 
 
