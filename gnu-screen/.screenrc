@@ -6,10 +6,10 @@ caption always
 #caption string "%{= BW}%-w %{= rW}%n %t %{= BW}%+w %{= BW}%-15=[%S]"
 # Red:
 caption string "%{= rW}%-w %{= bW}%n %t %{= rW}%+w %{= rW}%-15=[%S]"
-# Yellow
-caption string "%{= yk}%-w %{= bW}%n %t %{= yk}%+w %{= yk}%-15=[%S]"
 maptimeout 5
 term xterm
 vbell off
 defscrollback 20000
 term screen-256color
+termcapinfo xterm* ti@:te@
+
