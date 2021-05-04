@@ -1,8 +1,7 @@
 # Usando o screen
 
-Coloque o arquivo `.screenrc` fornecido aqui no seu diretório `/home/usuario`. O terminal ficará mais ou menos assim:
 
-![image](https://user-images.githubusercontent.com/31046348/116999946-becc0880-acb6-11eb-893f-78a0c7d8dbb8.png)
+<img width=400px src=https://user-images.githubusercontent.com/31046348/116999946-becc0880-acb6-11eb-893f-78a0c7d8dbb8.png>
 
 
 Se não estiver instalado, instale:
