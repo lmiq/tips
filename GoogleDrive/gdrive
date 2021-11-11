@@ -65,7 +65,7 @@ cat $ignore_base >> "$igTMP"
 echo "# This file:" >> "$igTMP"
 echo ".gdriveignoreTMP" >> "$igTMP"
 if [[ $ignore_files ]]; then
-    echo "Found .gdrivegnore files."
+    echo "Found .gdriveignore files."
     for file in "$ignore_files" ; do
       echo "# $file" >> "$igTMP"
       dir=${file#"$current_dir"}
@@ -79,7 +79,7 @@ if [[ $ignore_files ]]; then
       done
     done
 else
-    echo "No .gdrivegnore files found"
+    echo "No .gdriveignore files found"
 fi
 
 gdrive_ignore="$igTMP"
