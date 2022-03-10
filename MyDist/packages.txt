@@ -1,14 +1,13 @@
-vim-gnome
+vim-gtk
 pymol
 rclone
 inkscape
-gnu-screen
+screen
 texlive-full
 gfortran
 msttcorefonts
-python3-matplotlib python3-numpy python3-scipy
-python-matplotlib python3-numpy python3-scipy
-open-ssh
+ssh
+ttf-moscorefonts-installer
 git
 chromium-browser
 language-pack-pt
