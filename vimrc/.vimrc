@@ -26,9 +26,10 @@ set bs=eol,start,indent
 set redraw
 set ruler
 set showmode
-set shiftwidth=2
-set tabstop=6
+set shiftwidth=4 smarttab
+set tabstop=8 softtabstop=0
 set expandtab
+
 syntax off
 set nohlsearch
 "set hlsearch
