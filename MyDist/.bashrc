@@ -86,5 +86,10 @@ export LD_LIBRARY_PATH
 
 alias display='export DISPLAY=:0.0'
 
+# Allow up and down arrows to navigate the history contextually
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+
 
 
