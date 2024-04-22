@@ -60,6 +60,9 @@ autocmd BufReadPost *
 map tn :tabnext<CR>
 map tp :tabprev<CR>
 
+"type make to mean make! to build quickly underlying stuff
+map make :make!<CR>
+
 hi Spellbad ctermbg=red
 hi Visual ctermbg=231 ctermfg=240
 
